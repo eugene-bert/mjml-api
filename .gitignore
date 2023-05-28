@@ -4,3 +4,8 @@ scripts/
 # NPM
 node_modules/
 dist/
+
+# editors
+.DS_Store
+.idea/*
+.vscode/

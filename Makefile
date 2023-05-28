@@ -16,7 +16,7 @@ help: Makefile
 
 ## app: Build whole app
 .PHONY: app
-app: init format style build
+app: format style build
 
 ## name: Output name of app
 .PHONY: name
@@ -33,10 +33,8 @@ version:
 version-date:
 	@printf "$(shell git log -n 1 "--date=format:%Y%m%d%H%M" "--pretty=format:%cd")"
 
-## init: Bootstrap your application. e.g. fetch some data files, make some API calls, request user input etc...
 .PHONY: init
 init:
-	@curl --disable --silent --show-error --location --max-time 30 "https://raw.githubusercontent.com/ViBiOh/scripts/main/bootstrap" | bash -s -- "-c" "git_hooks"
 	npm ci
 
 ## format: Format code. e.g Prettier (js), format (golang)

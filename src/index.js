@@ -5,6 +5,7 @@ import express from 'express';
 import yargs from 'yargs';
 import app from './app';
 import server from './server';
+import registerMjmlComponents from "./registerMjmlComponents";
 
 /**
  * Get options from yargs.
@@ -36,5 +37,6 @@ if (cluster.isPrimary && options.workerCount > 1) {
   });
 } else {
   app.init(expressApp);
+  registerMjmlComponents.init();
   server.init(expressApp, options);
 }
