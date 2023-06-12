@@ -1,9 +1,6 @@
-# scripts
-scripts/
-
 # NPM
-node_modules/
-dist/
+js/node_modules/
+js/dist/
 
 # editors
 .DS_Store

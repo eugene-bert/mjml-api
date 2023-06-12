@@ -58,3 +58,8 @@ build:
 .PHONY: run
 run:
 	npm start
+
+# docker compose targets
+.PHONY: compose-build start stop logs restart
+compose-build start stop logs psql restart:
+	make -f scripts/make/Makefile_compose $@
